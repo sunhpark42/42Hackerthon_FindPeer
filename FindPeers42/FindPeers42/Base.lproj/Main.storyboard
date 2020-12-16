@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FindPeers42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8U-nr-HbE">
+                                <rect key="frame" x="693" y="576" width="44" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="검색">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="8aO-yH-ipK"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3S-5v-gh6">
+                                <rect key="frame" x="112" y="489" width="491" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PEER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkV-Ts-W50">
+                                <rect key="frame" x="363" y="293.5" width="108" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrj-vu-hh6">
+                                <rect key="frame" x="365" y="235" width="104" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="y8U-nr-HbE" secondAttribute="centerY" id="BYi-h8-UXZ"/>
+                            <constraint firstItem="X3S-5v-gh6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Iwe-sO-PFc"/>
+                            <constraint firstItem="y8U-nr-HbE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="trailing" multiplier="6/7" id="J5Q-gU-Qx5"/>
+                            <constraint firstItem="wrj-vu-hh6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="USa-S4-ySR"/>
+                            <constraint firstItem="XkV-Ts-W50" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aKX-vA-Lia"/>
+                            <constraint firstItem="XkV-Ts-W50" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="10/20" id="cuJ-SH-61s"/>
+                            <constraint firstItem="X3S-5v-gh6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="trailing" multiplier="3/7" id="lca-ed-hai"/>
+                            <constraint firstItem="wrj-vu-hh6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="8/20" id="pnd-Cx-JfB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="width" secondItem="X3S-5v-gh6" secondAttribute="width" multiplier="1.7" id="uVt-nF-je0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="projectPickerView" destination="X3S-5v-gh6" id="9ap-5S-S4A"/>
+                        <outlet property="searchButton" destination="y8U-nr-HbE" id="5o9-S7-KDy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.84892086330936" y="69.849246231155774"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
