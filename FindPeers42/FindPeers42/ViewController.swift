@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var searchButton : UIButton!
     @IBOutlet weak var projectPickerView: UIPickerView!
+    @IBOutlet weak var commandLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     
     var projectsData: [String] = ["libft", "get_next_line", "netwhat", "ft_printf", "ft_server", "cub3d", "miniRT", "libasm", "ft_services", "minishell", "Philosophers", "CPP Module 00", "CPP Module 01", "CPP Module 02", "CPP Module 03", "CPP Module 04", "CPP Module 05", "CPP Module 06", "CPP Module 07", "CPP Module 08", "ft_containers", "ft_irc", "webserv", "ft_transcendence"]
     var projectsId: [Int] = [1314, 1327, 1318, 1316, 1328, 1326, 1315, 1330, 1329, 1331, 1334, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1335, 1336, 1332, 1337]
@@ -25,20 +27,20 @@ class ViewController: UIViewController {
     let apiTokenUrl = URL(string: "https://api.intra.42.fr/oauth/token")
     var token: String?
     var projectInfo: [Project] = []
-    var projectUser: [String] = []
-    var projectFinalMark: [String] = []
-    
     var locationInfo: [Location] = []
-    var locationUser: [String] = []
     
-    var activeProjectUsers: [String] = []
-    var activeProjectUsersFinalMark: [String] = []
+    var activeProjectUsers: [ActiveProjectUser] = []
+    
+    var searchCommand = "검색 버튼을 누르고, 잠시만 기다려주세요."
+    var finishCommand = "다음 버튼을 눌러 정보를 확인하세요."
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         projectPickerView.delegate = self;
         projectPickerView.dataSource = self;
+        commandLabel?.text = self.searchCommand
+        nextButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,24 +50,63 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        commandLabel?.text = self.searchCommand
+        nextButton.isHidden = true
+        projectInfo = []
+        locationInfo = []
+        activeProjectUsers = []
     }
     
     @IBAction func searchButtonClick () {
         guard let index = projectsData.firstIndex(of: project) else { return }
         getUserName(project_id: self.projectsId[index])
-        sleep(5)
+        sleep(2)
         getLocation()
-        sleep(5)
-        self.locationUser.forEach { (user) in
-            let index = self.projectUser.firstIndex(of: user)
+        sleep(2)
+        getActiveProjectUser()
+    }
+    
+    @IBAction func nextButtonClick() {
+        performSegue(withIdentifier: "show", sender: nil)
+    }
+    
+    func getActiveProjectUser() {
+        // 정렬 된 상태
+        let projectUser = self.projectInfo.map { (Project) in
+            return Project.user.login
+        }
+        let projectUserStatus = self.projectInfo.map({ (Project) -> String in
+            let score = Project.finalMark ?? 0
+            if score == 115 {
+                return "all_bonus"
+            } else if score >= 100 {
+                return "finished"
+            } else {
+                return "in_progress"
+            }
+        })
+        let locationUser = self.locationInfo.map { (Location) in
+            return Location.user.login
+        }
+        let location = self.locationInfo.map { (Location) in
+            return Location.host
+        }
+        locationUser.forEach { (user) in
+            let index = projectUser.firstIndex(of: user)
+            let locationIndex = locationUser.firstIndex(of: user)
             if index != nil {
-                self.activeProjectUsers.append(projectUser[index!])
-                self.activeProjectUsersFinalMark.append(projectFinalMark[index!])
+                let activeUser: ActiveProjectUser = ActiveProjectUser(name : projectUser[index!], location: location[locationIndex!], status: projectUserStatus[index!])
+                if (self.activeProjectUsers.firstIndex(where: { (ActiveProjectUser) -> Bool in
+                    ActiveProjectUser.name == activeUser.name
+                }) == nil) {
+                    self.activeProjectUsers.append(activeUser)
+                }
             }
         }
-        print(self.activeProjectUsers)
-        print(self.activeProjectUsersFinalMark)
+        self.commandLabel?.text = finishCommand
+        self.nextButton.isHidden = false
     }
+    
     
     func getToken() {
         let parameters = [
@@ -139,24 +180,10 @@ class ViewController: UIViewController {
                 sleep(1)
             } while (info.count != 0)
             print("Project finish")
-            projectInfo.sort { (Project1, Project2) -> Bool in
+            // 점수가 높은 순으로 프로젝트 유저 정렬
+            self.projectInfo.sort { (Project1, Project2) -> Bool in
                 return Project1.finalMark ?? 0 > Project2.finalMark ?? 0
             }
-            let user = self.projectInfo.map({ (Project) -> String in
-                return Project.user.login
-            })
-            let finalMark = self.projectInfo.map({ (Project) -> String in
-                let score = Project.finalMark ?? 0
-                if score == 115 {
-                    return "bonus"
-                } else if score >= 100 {
-                    return "pass"
-                } else {
-                    return "in_progress"
-                }
-            })
-            self.projectUser.append(contentsOf: user)
-            self.projectFinalMark.append(contentsOf: finalMark)
         }
     }
     
@@ -197,12 +224,23 @@ class ViewController: UIViewController {
                 sleep(1)
             } while (info.count != 0)
             print("location finish")
-            let activeUser = self.locationInfo.map({ (Location) -> String in
-                return Location.user.login
-            })
-            self.locationUser.append(contentsOf: activeUser)
         }
     }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        guard let SearchViewController = segue.destination as? SearchViewController else {
+            return
+        }
+        
+        SearchViewController.searchViewActiveProjectUsers = self.activeProjectUsers
+    }
+    
+    
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
