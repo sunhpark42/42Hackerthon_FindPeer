@@ -12,7 +12,7 @@ sunhpark, hyulee, njeong
 * iPad
 
 ## 앱 이미지
-<table>
+<table border="0">
 	<tr>
 		<td>
 			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/app_main.png" alt="app_main" width="320px"/>
