@@ -1,11 +1,17 @@
-# [42해커톤] FIND PEERS!👩👦👨
+# [42해커톤] FIND42PEERS👩👦👨
 
-<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/findpeer_appIcon.png" alt="appIcon" />
+<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/FIND_42PEERS" alt="appIcon" />
 
 <p><strong>현재 진행중인 과제</strong>, 혼자하기 힘들다면 이미 끝낸 사람에게 물어보거나 같이 할 <strong>동료</strong>를 찾아보아요.</p>
 
 ## 🖥 개발
 sunhpark, hyulee, njeong
+
+### 개발 목적
+현재 진행중인 프로젝트에 대해 궁금한 것이 생겼다면? 클러스터에서 바로 물어볼 수 있는 사람을 찾아 질문할 수 있게 하기 위해,
+혼자서 프로젝트를 진행하기 심심하다면? 같은 프로젝트를 하는 동료를 찾아 함께 공부할 수 있게 하기 위해,
+프로젝트 명으로 현재 클러스터에 프로젝트를 진행중인 or 프로젝트를 완료한 동료들의 위치를 알려드립니다.📣📣
+
 
 ## 📱지원
 * iOS 14.0+
