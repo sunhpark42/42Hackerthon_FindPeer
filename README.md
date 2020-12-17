@@ -11,7 +11,7 @@ sunhpark, hyulee, njeong
 * iOS 14.0+
 * iPad
 
-## 앱 이미지
+## App
 <table border="0">
 	<tr>
 		<td>
@@ -25,6 +25,12 @@ sunhpark, hyulee, njeong
 		</td>
 	</tr>
 </table>
+
+1. 원하는 프로젝트의 이름을 골라서 <strong>'검색'</strong>을 누릅니다.
+2. 기다립니다. 천...천히.... 인내심을 가지세요. <strong>Don't Panic!</strong>
+3. <strong>'다음'</strong> 버튼을 누릅니다.
+4. 자리를 확인하고, 동료에게 가서 물어보세요!
+5. 같이 공부할 동료를 찾는다면? 진행중을 눌러보세요!
 
 ## 기술 스택
 <img src="https://img.shields.io/badge/swift-v5.1-orange?logo=swift" />
