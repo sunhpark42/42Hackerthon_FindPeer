@@ -11,6 +11,21 @@ sunhpark, hyulee, njeong
 * iOS 14.0+
 * iPad
 
+## 앱 이미지
+<table>
+	<tr>
+		<td>
+			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/app_main.png" alt="app_main"/>
+		</td>
+		<td>
+			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_progress.png" alt="app_main"/>
+		</td>
+		<td>
+			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_finished.png" alt="app_main"/>
+		</td>
+	</tr>
+</table>
+
 ### 기술 스택
 <img src="https://img.shields.io/badge/swift-v5.1-orange?logo=swift" />
 
