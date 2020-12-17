@@ -47,6 +47,10 @@ sunhpark, hyulee, njeong
 5. 같이 공부할 동료를 찾는다면? 진행중을 눌러보세요!
 
 ### 시연 영상
+[![Video Label](http://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_app_main.png)](https://youtu.be/6CfGvSt73ug)
+
+
+
 ![video Lable
 url: https://youtu.be/6CfGvSt73ug
 [![FinishedLink]("./images/result_finished.png")](url: https://youtu.be/6CfGvSt73ug) 
