@@ -42,3 +42,11 @@ sunhpark, hyulee, njeong
 * Innovation Academy 42SEOUL
 * POSTMAN
 * quicktype : url[!https://app.quicktype.io]
+* jaejeon
+* yepark
+* soohchoi 🍗
+
+## 지금 이시점 가장 하고싶은 것 (현재시각 : 2020.12.18 08:11 a.m.)
+* sunhpark : 술마시고 싶다..🍺
+* hyulee : 자고싶다..😴
+* njeon : (이미 자고있음) 🛌
