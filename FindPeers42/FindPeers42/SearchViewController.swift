@@ -101,11 +101,14 @@ class SearchViewController: UIViewController, UITableViewDataSource {
         cell.location.text = dataInfo.location
         if dataInfo.status == "in_progress" {
             cell.status.text = "진행중"
+            cell.status.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
         } else {
             cell.status.text = "완료"
+            cell.status.textColor = UIColor(red: 36/255, green: 143/255, blue: 36/255, alpha: 1)
         }
         if dataInfo.status == "all_bonus" {
             cell.bonus.text = "보너스"
+            cell.bonus.textColor = UIColor(red: 0/255, green: 115/255, blue: 230/255, alpha: 1)
         } else {
             cell.bonus.text = ""
         }
