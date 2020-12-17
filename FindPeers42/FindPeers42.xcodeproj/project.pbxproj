@@ -13,6 +13,13 @@
 		FC6867B92589F6300009ACB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6867B72589F6300009ACB7 /* Main.storyboard */; };
 		FC6867BB2589F6310009ACB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6867BA2589F6310009ACB7 /* Assets.xcassets */; };
 		FC6867BE2589F6310009ACB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6867BC2589F6310009ACB7 /* LaunchScreen.storyboard */; };
+		FC6867EF258A829A0009ACB7 /* apiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867EE258A829A0009ACB7 /* apiToken.swift */; };
+		FC6867F2258B24CC0009ACB7 /* projectsUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867F1258B24CC0009ACB7 /* projectsUsers.swift */; };
+		FC6867F5258B2F560009ACB7 /* projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867F4258B2F560009ACB7 /* projects.swift */; };
+		FC6867F8258BAE0F0009ACB7 /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867F7258BAE0F0009ACB7 /* location.swift */; };
+		FC6867FB258BCD9E0009ACB7 /* activeProjectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867FA258BCD9E0009ACB7 /* activeProjectUser.swift */; };
+		FC686808258BD9F10009ACB7 /* tempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC686807258BD9F10009ACB7 /* tempViewController.swift */; };
+		FC68680D258BDD9F0009ACB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68680C258BDD9F0009ACB7 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		FC6867BA2589F6310009ACB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6867BD2589F6310009ACB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6867BF2589F6310009ACB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC6867EE258A829A0009ACB7 /* apiToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiToken.swift; sourceTree = "<group>"; };
+		FC6867F1258B24CC0009ACB7 /* projectsUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectsUsers.swift; sourceTree = "<group>"; };
+		FC6867F4258B2F560009ACB7 /* projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projects.swift; sourceTree = "<group>"; };
+		FC6867F7258BAE0F0009ACB7 /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
+		FC6867FA258BCD9E0009ACB7 /* activeProjectUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activeProjectUser.swift; sourceTree = "<group>"; };
+		FC686807258BD9F10009ACB7 /* tempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempViewController.swift; sourceTree = "<group>"; };
+		FC68680C258BDD9F0009ACB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +73,17 @@
 				FC6867B12589F6300009ACB7 /* AppDelegate.swift */,
 				FC6867B32589F6300009ACB7 /* SceneDelegate.swift */,
 				FC6867B52589F6300009ACB7 /* ViewController.swift */,
+				FC68680C258BDD9F0009ACB7 /* SearchViewController.swift */,
+				FC6867FA258BCD9E0009ACB7 /* activeProjectUser.swift */,
+				FC686807258BD9F10009ACB7 /* tempViewController.swift */,
+				FC6867F7258BAE0F0009ACB7 /* location.swift */,
+				FC6867F4258B2F560009ACB7 /* projects.swift */,
 				FC6867B72589F6300009ACB7 /* Main.storyboard */,
 				FC6867BA2589F6310009ACB7 /* Assets.xcassets */,
 				FC6867BC2589F6310009ACB7 /* LaunchScreen.storyboard */,
 				FC6867BF2589F6310009ACB7 /* Info.plist */,
+				FC6867EE258A829A0009ACB7 /* apiToken.swift */,
+				FC6867F1258B24CC0009ACB7 /* projectsUsers.swift */,
 			);
 			path = FindPeers42;
 			sourceTree = "<group>";
@@ -137,9 +158,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC68680D258BDD9F0009ACB7 /* SearchViewController.swift in Sources */,
+				FC6867F8258BAE0F0009ACB7 /* location.swift in Sources */,
+				FC6867F2258B24CC0009ACB7 /* projectsUsers.swift in Sources */,
+				FC6867EF258A829A0009ACB7 /* apiToken.swift in Sources */,
 				FC6867B62589F6300009ACB7 /* ViewController.swift in Sources */,
+				FC6867FB258BCD9E0009ACB7 /* activeProjectUser.swift in Sources */,
 				FC6867B22589F6300009ACB7 /* AppDelegate.swift in Sources */,
 				FC6867B42589F6300009ACB7 /* SceneDelegate.swift in Sources */,
+				FC686808258BD9F10009ACB7 /* tempViewController.swift in Sources */,
+				FC6867F5258B2F560009ACB7 /* projects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,6 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CL9BW5NJC;
 				INFOPLIST_FILE = FindPeers42/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CL9BW5NJC;
 				INFOPLIST_FILE = FindPeers42/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
