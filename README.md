@@ -15,13 +15,13 @@ sunhpark, hyulee, njeong
 <table>
 	<tr>
 		<td>
-			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/app_main.png" alt="app_main"/>
+			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/app_main.png" alt="app_main" width="200px"/>
 		</td>
 		<td>
-			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_progress.png" alt="app_main"/>
+			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_progress.png" alt="app_main" width="200px"/>
 		</td>
 		<td>
-			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_finished.png" alt="app_main"/>
+			<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_finished.png" alt="app_main" width="200px"/>
 		</td>
 	</tr>
 </table>
