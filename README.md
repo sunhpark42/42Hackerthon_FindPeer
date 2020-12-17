@@ -3,7 +3,11 @@
 <p align="center">
 	<br/>
 	<br/>
+	<br/>
+	<br/>
 	<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/FIND_42PEERS.png" alt="appIcon" />
+	<br/>
+	<br/>
 	<br/>
 	<br/>
 </p>
