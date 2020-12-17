@@ -47,8 +47,9 @@ sunhpark, hyulee, njeong
 5. 같이 공부할 동료를 찾는다면? 진행중을 눌러보세요!
 
 ### 시연 영상
+<div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6CfGvSt73ug" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+</div>
 중간중간 데이터를 받아오는 시간이 길어요. 스킵하면서 보면 좋습니다.
 
 ## 기술 스택
