@@ -1,7 +1,11 @@
 # [42해커톤] FIND42PEERS👩👦👨
 
-<p align="center" height="480px">
+<p align="center">
+	<br/>
+	<br/>
 	<img src="https://sunhpark42.github.io/42Hackerthon_FindPeer/images/FIND_42PEERS.png" alt="appIcon" />
+	<br/>
+	<br/>
 </p>
 
 ## 🖥 개발
