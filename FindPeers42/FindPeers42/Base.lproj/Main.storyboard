@@ -26,6 +26,14 @@
                                     <action selector="searchButtonClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="BTS-i4-cmI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71N-wP-Dxn">
+                                <rect key="frame" x="431" y="823" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="find"/>
+                                <connections>
+                                    <action selector="printProjects" destination="BYZ-38-t0r" eventType="touchUpInside" id="yG5-Ox-fi0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

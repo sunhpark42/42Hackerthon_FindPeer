@@ -24,6 +24,15 @@ class ViewController: UIViewController {
     let apiUrl = URL(string: "https://api.intra.42.fr")
     let apiTokenUrl = URL(string: "https://api.intra.42.fr/oauth/token")
     var token: String?
+    var projectInfo: [Project] = []
+    var projectUser: [String] = []
+    var projectFinalMark: [String] = []
+    
+    var locationInfo: [Location] = []
+    var locationUser: [String] = []
+    
+    var activeProjectUsers: [String] = []
+    var activeProjectUsersFinalMark: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +53,18 @@ class ViewController: UIViewController {
     @IBAction func searchButtonClick () {
         guard let index = projectsData.firstIndex(of: project) else { return }
         getUserName(project_id: self.projectsId[index])
+        sleep(5)
+        getLocation()
+        sleep(5)
+        self.locationUser.forEach { (user) in
+            let index = self.projectUser.firstIndex(of: user)
+            if index != nil {
+                self.activeProjectUsers.append(projectUser[index!])
+                self.activeProjectUsersFinalMark.append(projectFinalMark[index!])
+            }
+        }
+        print(self.activeProjectUsers)
+        print(self.activeProjectUsersFinalMark)
     }
     
     func getToken() {
@@ -77,43 +98,111 @@ class ViewController: UIViewController {
         }
         
         task.resume()
+        print(self.token)
 
     }
     
     func getUserName(project_id: Int) {
+        var info: [Project] = []
         if self.token == nil {
             print("error")
         }
         else {
-            let url = "https://api.intra.42.fr/v2/projects/\(project_id)"
-            var request = URLRequest(url: URL(string: url)!)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = [
-                "Authorization": "Bearer \(self.token!)"
-            ]
+            var pageIndex = 1
+            repeat {
+                print("Project start")
+                print(pageIndex)
+                var url = "https://api.intra.42.fr/v2/projects/\(project_id)/projects_users?filter[campus]=29&page[number]=\(pageIndex)"
+                var request = URLRequest(url: URL(string: url)!)
+                request.httpMethod = "GET"
+                request.allHTTPHeaderFields = [
+                    "Authorization": "Bearer \(self.token!)"
+                ]
 
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 
-                guard let data = data, error == nil else {
-                    print("error")
-                    return
+                    guard let data = data, error == nil else {
+                        print("error")
+                        return
+                    }
+
+                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                        print("response = \(String(describing: response))")
+                    }
+                    
+                    info = try! JSONDecoder().decode([Project].self, from: data)
+                    self.projectInfo.append(contentsOf: info)
                 }
-
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(String(describing: response))")
-                }
-
-                let dataString = String(decoding: data, as: UTF8.self)
-                let dataData = Data(dataString.utf8)
-                let json = try? JSONSerialization.jsonObject(with: dataData, options: [])
-                print(json)
+                task.resume()
+                pageIndex += 1
+                sleep(1)
+            } while (info.count != 0)
+            print("Project finish")
+            projectInfo.sort { (Project1, Project2) -> Bool in
+                return Project1.finalMark ?? 0 > Project2.finalMark ?? 0
             }
-            
-            task.resume()
+            let user = self.projectInfo.map({ (Project) -> String in
+                return Project.user.login
+            })
+            let finalMark = self.projectInfo.map({ (Project) -> String in
+                let score = Project.finalMark ?? 0
+                if score == 115 {
+                    return "bonus"
+                } else if score >= 100 {
+                    return "pass"
+                } else {
+                    return "in_progress"
+                }
+            })
+            self.projectUser.append(contentsOf: user)
+            self.projectFinalMark.append(contentsOf: finalMark)
         }
     }
     
+    func getLocation() {
+        var info: [Location] = []
+        if self.token == nil {
+            print("error")
+        }
+        else {
+            var pageIndex = 1
+            repeat {
+                print("location start")
+                print(pageIndex)
+                var url = "https://api.intra.42.fr/v2/locations?filter[campus_id]=29&filter[active]=true&page[number]=\(pageIndex))"
+                var request = URLRequest(url: URL(string: url)!)
+                request.httpMethod = "GET"
+                request.allHTTPHeaderFields = [
+                    "Authorization": "Bearer \(self.token!)"
+                ]
+
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+
+                    guard let data = data, error == nil else {
+                        print("error")
+                        return
+                    }
+
+                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                        print("response = \(String(describing: response))")
+                    }
+                    
+                    info = try! JSONDecoder().decode([Location].self, from: data)
+                    self.locationInfo.append(contentsOf: info)
+                }
+                task.resume()
+                pageIndex += 1
+                sleep(1)
+            } while (info.count != 0)
+            print("location finish")
+            let activeUser = self.locationInfo.map({ (Location) -> String in
+                return Location.user.login
+            })
+            self.locationUser.append(contentsOf: activeUser)
+        }
+    }
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -128,11 +217,10 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
          return projectsData[row]
      }
-     
+    
      func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         project = projectsData[row];
      }
-    
     
 }
 

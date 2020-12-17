@@ -16,6 +16,8 @@
 		FC6867EF258A829A0009ACB7 /* apiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867EE258A829A0009ACB7 /* apiToken.swift */; };
 		FC6867F2258B24CC0009ACB7 /* projectsUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867F1258B24CC0009ACB7 /* projectsUsers.swift */; };
 		FC6867F5258B2F560009ACB7 /* projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867F4258B2F560009ACB7 /* projects.swift */; };
+		FC6867F8258BAE0F0009ACB7 /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867F7258BAE0F0009ACB7 /* location.swift */; };
+		FC6867FB258BCD9E0009ACB7 /* activeProjectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6867FA258BCD9E0009ACB7 /* activeProjectUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FC6867EE258A829A0009ACB7 /* apiToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiToken.swift; sourceTree = "<group>"; };
 		FC6867F1258B24CC0009ACB7 /* projectsUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectsUsers.swift; sourceTree = "<group>"; };
 		FC6867F4258B2F560009ACB7 /* projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projects.swift; sourceTree = "<group>"; };
+		FC6867F7258BAE0F0009ACB7 /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
+		FC6867FA258BCD9E0009ACB7 /* activeProjectUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activeProjectUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				FC6867B12589F6300009ACB7 /* AppDelegate.swift */,
 				FC6867B32589F6300009ACB7 /* SceneDelegate.swift */,
 				FC6867B52589F6300009ACB7 /* ViewController.swift */,
+				FC6867FA258BCD9E0009ACB7 /* activeProjectUser.swift */,
+				FC6867F7258BAE0F0009ACB7 /* location.swift */,
 				FC6867F4258B2F560009ACB7 /* projects.swift */,
 				FC6867B72589F6300009ACB7 /* Main.storyboard */,
 				FC6867BA2589F6310009ACB7 /* Assets.xcassets */,
@@ -146,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6867F8258BAE0F0009ACB7 /* location.swift in Sources */,
 				FC6867F2258B24CC0009ACB7 /* projectsUsers.swift in Sources */,
 				FC6867EF258A829A0009ACB7 /* apiToken.swift in Sources */,
 				FC6867B62589F6300009ACB7 /* ViewController.swift in Sources */,
+				FC6867FB258BCD9E0009ACB7 /* activeProjectUser.swift in Sources */,
 				FC6867B22589F6300009ACB7 /* AppDelegate.swift in Sources */,
 				FC6867B42589F6300009ACB7 /* SceneDelegate.swift in Sources */,
 				FC6867F5258B2F560009ACB7 /* projects.swift in Sources */,
