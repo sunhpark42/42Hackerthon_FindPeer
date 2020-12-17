@@ -12,12 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchButton : UIButton!
     @IBOutlet weak var projectPickerView: UIPickerView!
     
-    var projectsData: [String] = ["libft", "gnl", "printf", "netwhat"]
+    var projectsData: [String] = ["libft", "get_next_line", "netwhat", "ft_printf", "ft_server", "cub3d", "miniRT", "libasm", "ft_services", "minishell", "Philosophers", "CPP Module 00", "CPP Module 01", "CPP Module 02", "CPP Module 03", "CPP Module 04", "CPP Module 05", "CPP Module 06", "CPP Module 07", "CPP Module 08", "ft_containers", "ft_irc", "webserv", "ft_transcendence"]
+    var projectsId: [Int] = [1314, 1327, 1318, 1316, 1328, 1326, 1315, 1330, 1329, 1331, 1334, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1335, 1336, 1332, 1337]
+    var projectCircle: [Int] = [0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6]
     
     var project: String = ""
     
-    let appId = "c4412565fc115e8f6e2c00ef1cd54e52dd76f65568c5b76809b576576b71a75c"
-    let appSecret = "28c4dab18a488c3bda5b33622280b74c94de4eb800128b532ba5d8b1438ea930"
+    let appId = "f570e30e89f7d85ac58738258d5c0e622adacba28b0c22e80bf05ad94769a895"
+    let appSecret = "3835ae693daef1fd596a9ba41614ca19b2ed9961dff77edb0c9579931c5964ad"
     let appRedirectUri = "FindPeer://FindPeer"
     let apiUrl = URL(string: "https://api.intra.42.fr")
     let apiTokenUrl = URL(string: "https://api.intra.42.fr/oauth/token")
@@ -40,8 +42,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchButtonClick () {
-        print(project)
-        getUserName(user_id: 72458)
+        guard let index = projectsData.firstIndex(of: project) else { return }
+        getUserName(project_id: self.projectsId[index])
     }
     
     func getToken() {
@@ -78,12 +80,12 @@ class ViewController: UIViewController {
 
     }
     
-    func getUserName(user_id: Int) {
+    func getUserName(project_id: Int) {
         if self.token == nil {
             print("error")
         }
         else {
-            let url = "https://api.intra.42.fr/" + "/v2/users/\(user_id)"
+            let url = "https://api.intra.42.fr/v2/projects/\(project_id)"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "GET"
             request.allHTTPHeaderFields = [
@@ -102,9 +104,10 @@ class ViewController: UIViewController {
                     print("response = \(String(describing: response))")
                 }
 
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
-                print(json!["login"]!)
-                
+                let dataString = String(decoding: data, as: UTF8.self)
+                let dataData = Data(dataString.utf8)
+                let json = try? JSONSerialization.jsonObject(with: dataData, options: [])
+                print(json)
             }
             
             task.resume()
