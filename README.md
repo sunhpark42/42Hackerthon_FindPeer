@@ -49,7 +49,7 @@ sunhpark, hyulee, njeong
 ### 시연 영상
 ![video Lable
 url: https://youtu.be/6CfGvSt73ug
-[![예제]("./images/result_finished.png")](url: https://youtu.be/6CfGvSt73ug) 
+[![FinishedLink]("./images/result_finished.png")](url: https://youtu.be/6CfGvSt73ug) 
 중간중간 데이터를 받아오는 시간이 길어요. 스킵하면서 보면 좋습니다.
 
 ## 기술 스택
