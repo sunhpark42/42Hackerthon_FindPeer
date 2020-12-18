@@ -13,7 +13,9 @@
 </p>
 
 ## 🖥 개발
-sunhpark, hyulee, njeong
+* sunhpark
+* hyulee
+* njeong
 
 ## ⚒개발 목적
 현재 진행중인 프로젝트에 대해 궁금한 것이 생겼다면? 클러스터에서 바로 물어볼 수 있는 사람을 찾아 질문할 수 있게 하기 위해,
@@ -57,7 +59,7 @@ sunhpark, hyulee, njeong
 ## SPECIAL THANKS TO 🙏
 * Innovation Academy 42SEOUL
 * POSTMAN
-* quicktype : url[!https://app.quicktype.io]
+* quicktype.io
 * jaejeon
 * yepark
 * soohchoi 🍗
@@ -65,4 +67,4 @@ sunhpark, hyulee, njeong
 ## 지금 이시점 가장 하고싶은 것 (현재시각 : 2020.12.18 08:11 a.m.)
 * sunhpark : 술마시고 싶다..🍺
 * hyulee : 자고싶다..😴
-* njeon : (이미 자고있음) 🛌
+* njeong : (이미 자고있음) 🛌
