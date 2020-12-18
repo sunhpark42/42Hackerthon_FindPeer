@@ -46,15 +46,7 @@ sunhpark, hyulee, njeong
 4. 자리를 확인하고, 동료에게 가서 물어보세요!
 5. 같이 공부할 동료를 찾는다면? 진행중을 눌러보세요!
 
-### 시연 영상
-[![Video Label](http://sunhpark42.github.io/42Hackerthon_FindPeer/images/result_app_main.png)](https://youtu.be/6CfGvSt73ug)
-
-
-
-![video Lable
-url: https://youtu.be/6CfGvSt73ug
-[![FinishedLink]("./images/result_finished.png")](url: https://youtu.be/6CfGvSt73ug) 
-중간중간 데이터를 받아오는 시간이 길어요. 스킵하면서 보면 좋습니다.
+<a href="https://youtu.be/6CfGvSt73ug"> 시연영상📼 보러가기 </a>
 
 ## 기술 스택
 <img src="https://img.shields.io/badge/swift-v5.1-orange?logo=swift" />
