@@ -62,7 +62,7 @@
 * quicktype.io
 * jaejeon
 * yepark
-* soohchoi 🍗
+* soohchoi, ryukim, kchoi 🍗
 
 ## 👀 지금 이시점 가장 하고싶은 것 (현재시각 : 2020.12.18 08:11 a.m.)
 * sunhpark : 술마시고 싶다..🍺
