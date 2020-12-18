@@ -23,11 +23,11 @@
 프로젝트 명으로 현재 클러스터에 프로젝트를 진행중인 or 프로젝트를 완료한 동료들의 위치를 알려드립니다.📣📣
 
 
-## 📱지원
+## 📱 지원
 * iOS 14.0+
 * iPad
 
-## App
+## 🔍 App
 <table>
 	<tr>
 		<td>
@@ -50,13 +50,13 @@
 
 * <a href="https://youtu.be/6CfGvSt73ug"> 시연영상 보러가기🎥 </a>
 
-## 기술 스택
+## ✏️  사용 언어
 <img src="https://img.shields.io/badge/swift-v5.1-orange?logo=swift" />
 
-## 만나서 즐거웠고 다시는 보지말자
+## 🙋‍♀️ 만나서 즐거웠고 다시는 보지말자
 * 42 API 
 
-## SPECIAL THANKS TO 🙏
+## 🙏 SPECIAL THANKS TO
 * Innovation Academy 42SEOUL
 * POSTMAN
 * quicktype.io
@@ -64,7 +64,7 @@
 * yepark
 * soohchoi 🍗
 
-## 지금 이시점 가장 하고싶은 것 (현재시각 : 2020.12.18 08:11 a.m.)
+## 👀 지금 이시점 가장 하고싶은 것 (현재시각 : 2020.12.18 08:11 a.m.)
 * sunhpark : 술마시고 싶다..🍺
 * hyulee : 자고싶다..😴
 * njeong : (이미 자고있음) 🛌
