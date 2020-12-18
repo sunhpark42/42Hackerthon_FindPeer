@@ -48,6 +48,14 @@
 4. 자리를 확인하고, 동료에게 가서 물어보세요!
 5. 같이 공부할 동료를 찾는다면? 진행중을 눌러보세요!
 
+### 시연 화면 (GIF)
+![video](https://sunhpark42.github.io/42Hackerthon_FindPeer/images/1.gif"
+![video](https://sunhpark42.github.io/42Hackerthon_FindPeer/images/2.gif"
+![video](https://sunhpark42.github.io/42Hackerthon_FindPeer/images/3.gif"
+![video](https://sunhpark42.github.io/42Hackerthon_FindPeer/images/4.gif"
+* 다크모드도 지원합니다 (속닥속닥)
+
+### Youtube 링크는 여기로
 * <a href="https://youtu.be/6CfGvSt73ug"> 시연영상 보러가기🎥 </a>
 
 ## ✏️  사용 언어
