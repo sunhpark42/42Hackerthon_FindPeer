@@ -25,6 +25,7 @@
 ## 업데이트
 - 앱 리퀘스트 보내는 부분을 sleep 으로 처리하던 것을 클로저를 이용하여 처리함. (2021.02.01)
 - Indicator 추가 (2021.02.01)
+- 서브젝트를 진행한 사람이 많은 경우를 대비해, 최대 검색 페이지수 제한 (2021.02.20)
 
 ### 개발 관련 기술 정리, 썰
 - <a href="https://developing-sunny.tistory.com/13"> [42Seoul] 42api를 이용한 아이패드 앱 FIND42PEERS 개발기 (부제 : 42api 사용법, 42 해커톤) by sunhpark </a>
@@ -57,8 +58,7 @@
 * 다크모드도 지원합니다 (속닥속닥)
 
 ### Youtube 링크는 여기로
-* <a href="https://youtu.be/6CfGvSt73ug"> 시연영상 보러가기(시뮬레이터)🎥 </a>
-* <a href="https://youtu.be/tDbR1IZzeFU"> 시연영상 보러가기(아이패드)🎥 </a>
+* [🎥DemoVideo(최종, 아이패드 시뮬레이터)](https://youtu.be/8RzC3rT-n9c)
 
 ## ✏️  사용 언어
 <img src="https://img.shields.io/badge/swift-v5.1-orange?logo=swift" />
